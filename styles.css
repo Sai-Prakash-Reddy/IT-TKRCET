@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #141313;
+  --secondary-color: #fff;
+}
+
 body {
-  background-color: #fff;
+  background-color: var(--secondary-color);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -32,14 +37,14 @@ header {
 
 .it-navlinks ul li a {
   text-decoration: none;
-  color: #fff;
+  color: var(--secondary-color);
   transition: color 0.4s ease;
   font-size: 1.5rem;
 }
 
 .it-mobilemenu {
   text-decoration: none;
-  color: white;
+  color: var(--secondary-color);
   display: none;
   cursor: pointer;
   position: relative;
@@ -50,7 +55,7 @@ header {
   display: block;
   width: 32px;
   height: 4px;
-  background-color: #fff;
+  background-color: var(--secondary-color);
   margin: 6px 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
   border-radius: 25px;
@@ -69,13 +74,77 @@ header {
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 85vh;
+  margin: 10px;
+  height: 100vh;
+  position: relative;
 }
 
-@media (max-width: 480px) {
+main h3{
+  margin-inline-start: 10px;
+}
+
+.question1 , .question2 {
+  display: block;
+  height: 40vh;
+  margin: 10px;
+  border: 2px solid black;
+  overflow: auto;
+  padding: 20px 10px;
+  position: relative;
+}
+
+.it-cnlab p {
+  margin-inline-start: 10px;
+}
+
+.copy{
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 2px solid #222;
+  width: max-content;
+  height: 25px;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+}
+
+.copy1{
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 2px solid #222;
+  width: max-content;
+  height: 25px;
+  position: absolute;
+  top: 380px;
+  right: 10px;
+}
+
+.programs{
+  font-size: larger;
+  font-weight: 500;
+  width: max-content;
+  margin: 10px;
+}
+
+footer {
+  background-color: var(--primary-color);
+  margin-top: 100px;
+  width: 100%;
+  height: 100px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.it-socialmedia a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
   #it-links {
     display: none;
     flex-direction: column;
@@ -84,11 +153,11 @@ main {
     position: fixed;
     top: 80px;
     right: -450px;
-    width: 100%;
+    width: 100% ;
     height: 100%;
     max-height: 82vh;
-    max-width: 450px;
-    background-color: #141313;
+    max-width: 450px ;
+    background-color: var(--primary-color);
     z-index: 1000;
     transition: 1s ease;
     transform: translateX(100%);
@@ -107,5 +176,27 @@ main {
   }
   .it-mobilemenu {
     display: block;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .copy1{
+    position: absolute;
+    top: 375px;
+  }
+}
+
+@media (max-width: 480px){
+  .copy{
+    position: absolute;
+    top: 70px;
+    right: 12px;
+  }
+  .copy1{
+    position: absolute;
+    top: 490px;
   }
 }
