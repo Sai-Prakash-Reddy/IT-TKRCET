@@ -85,7 +85,7 @@ int assign_seq_no() // function which splits message
   int k = 0, i, j; // into frames and assigns sequence no
   for (i = 0; i < strlen(str); k++)
   {
-      r[k].seq_no = k;
+      fr[k].seq_no = k;
     for (j = 0; j < FRAM_TXT_SIZ && str[i] != '\0'; j++)
       fr[k].text[j] = str[i++];
   }
